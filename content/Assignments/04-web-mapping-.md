@@ -27,3 +27,5 @@ The map uses an OpenStreetMap basemap and loads `ip_locations.geojson` as a mark
 ## Reflection
 
 The most interesting finding was how little geographic variety showed up despite 217 individual network requests. This is a useful reminder that IP-based geolocation reflects server and network infrastructure, not user location. Consumer platforms like Instagram route nearly all traffic through a small number of centralized data centers, so the geography of a web session says more about a company's infrastructure choices than about any specific place.
+
+* Web map files (live link): [https://ishika100603.github.io/cdp-mapping-systems/geolocate-har-file/my-web-map/index.html](https://ishika100603.github.io/cdp-mapping-systems/geolocate-har-file/my-web-map/index.html)
