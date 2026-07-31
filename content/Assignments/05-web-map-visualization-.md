@@ -30,4 +30,5 @@ I chose to encode the categorical variable through **color** rather than size, s
 ## Submission
 
 * Screenshots: `05-web-map-visualization-screenshot-1.png`, `05-web-map-visualization-screenshot-2.png`
-* Web map files (live link): *to be added — GitHub Pages link*
+* Web map files (live link): 
+https://ishika100603.github.io/cdp-mapping-systems/content/Assignments/Restaurant_map/index.html
