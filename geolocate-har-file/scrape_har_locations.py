@@ -6,8 +6,8 @@ from pathlib import Path
 from typing import List, Tuple
 
 # === CONFIGURATION ===
-HAR_FILE = "inputs/instagram.har"  # Replace with your HAR filename
-OUTPUT_MAP = "outputs/ip_map.html"
+HAR_FILE = "inputs/amazon.har"  # Amazon HAR file
+OUTPUT_MAP = "outputs/amazon_ip_map.html"
 MAX_IPS = 50  # Limit to avoid API rate limiting
 
 # === FUNCTIONS ===
@@ -83,9 +83,9 @@ def build_map(
     print(f"Map saved to: {output_path}")
 
     # additionally save data as a GeoJSON file
-    with open("outputs/ip_locations.geojson", "w", encoding="utf-8") as f:
+    with open("outputs/amazon_ip_locations.geojson", "w", encoding="utf-8") as f:
         json.dump(geojson_data, f)
-    print("GeoJSON saved to: outputs/ip_locations.geojson")
+    print("GeoJSON saved to: outputs/amazon_ip_locations.geojson")
 
 
 # === RUN ===

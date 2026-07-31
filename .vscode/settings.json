@@ -1,6 +1,9 @@
 {
   "markdown-pdf.displayHeaderFooter": false,
-  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
+  "jupyter.widgetScriptSources": [
+    "jsdelivr.com",
+    "unpkg.com"
+  ],
   "[python]": {
     "editor.formatOnType": true,
     "editor.defaultFormatter": "ms-python.black-formatter",
@@ -10,5 +13,6 @@
   "notebook.formatOnSave.enabled": true,
   "notebook.formatOnCellExecution": true,
   // this is extra but will help
-  "notebook.diff.ignoreMetadata": true
+  "notebook.diff.ignoreMetadata": true,
+  "liveServer.settings.port": 5501
 }
