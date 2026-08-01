@@ -1,0 +1,95 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "157.240.241.1",
+        "url": "https://static.xx.fbcdn.net/rsrc.php/v4/yB/r/Xvg8H8U9Y-d.js",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0066,
+          40.7126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "31.13.71.52",
+        "url": "https://scontent-lga3-1.cdninstagram.com/o1/v/t2/f2/m78/AQMxYWW5ZaffUYLoSB8jlh1A79FCgG7Sn6SrAWSx-YjnGHgbSge0JC4ManrU2z9A__tcQybl1EK4G1LLSiYlZannX5WvBRRXuMrDkcc.mp4?_nc_cat=111&_nc_sid=9ca052&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_ohc=KHWFjeOW4jYQ7kNvwH10bcw&efg=eyJ2ZW5jb2RlX3RhZyI6ImlnLXhwdmRzLmNsaXBzLmMyLUMzLmRhc2hfbG5faGVhYWNfdmJyM19hdWRpbyIsInZpZGVvX2lkIjpudWxsLCJvaWxfdXJsZ2VuX2FwcF9pZCI6OTM2NjE5NzQzMzkyNDU5LCJjbGllbnRfbmFtZSI6ImlnIiwieHB2X2Fzc2V0X2lkIjoxODQzOTAzMDk2NjEyNTIzMSwiYXNzZXRfYWdlX2RheXMiOjAsInZpX3VzZWNhc2VfaWQiOjEyMzc0LCJkdXJhdGlvbl9zIjoxNSwiYml0cmF0ZSI6NjM3ODEsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=ohBZQ5Rt0zXhWioDa1yLLA&_nc_ss=7a22e&_nc_zt=28&oh=00_AQAc6KzLo2gxugqWRx_VFp5yPXSQv9oh_1Qq_3X-iY4tWA&oe=6A6BF864&bytestart=83048&byteend=112106",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0066,
+          40.7126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "157.240.241.63",
+        "url": "https://scontent-lga3-2.cdninstagram.com/v/t51.82787-15/759776320_18408283882152362_5612734268454526663_n.jpg?stp=dst-jpg_e15_p240x240_tt6&_nc_cat=101&ig_cache_key=Mzk1MTI5ODQ4Nzk1NjU2MjA4MzE4NDA4MjgzODc5MTUyMzYy.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMTUuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=ChqfM7urHzEQ7kNvwHfDirx&_nc_oc=AdqnaYKArxx9ywW2I6hnlEf_zesITuSCoFpLt-6zKzqI46NRPXIpZOPKnRnLA69ppjc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=ohBZQ5Rt0zXhWioDa1yLLA&_nc_ss=7a22e&oh=00_AQDdGwvKmP37HIH82NgvAbXjuWu8utbvkew8Eg0QUN2TJQ&oe=6A6FE91F",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0066,
+          40.7126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "57.144.180.192",
+        "url": "https://scontent-lga3-3.cdninstagram.com/o1/v/t2/f2/m78/AQOyWwtn0rfEwCxpaU9h7t1vZPcnqelWtyOAEerRb4NhyeTmz1xff30GkM1VXAPry-2hojiB7SkXAxDsm272ZUnKtUHfOzIaBEAu5po.mp4?_nc_cat=1&_nc_sid=9ca052&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_ohc=lbheiZou5_sQ7kNvwENY6mJ&efg=eyJ2ZW5jb2RlX3RhZyI6ImlnLXhwdmRzLmNsaXBzLmMyLUMzLmRhc2hfbG5faGVhYWNfdmJyM19hdWRpbyIsInZpZGVvX2lkIjpudWxsLCJvaWxfdXJsZ2VuX2FwcF9pZCI6OTM2NjE5NzQzMzkyNDU5LCJjbGllbnRfbmFtZSI6ImlnIiwieHB2X2Fzc2V0X2lkIjoxNjU3ODE3MDA5MDk0ODUyLCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjEwLCJiaXRyYXRlIjo1OTUzMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=hS72gz771J7cEaJlEUI9Gw&_nc_ss=7a22e&_nc_zt=28&oh=00_AQBQGqzcUVciKXDBauBadrAa7mTIF94nF2PS4M19iRGEpA&oe=6A6BFE2A&bytestart=928&byteend=15796",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0066,
+          40.7126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "157.240.241.35",
+        "url": "https://www.facebook.com/ajax/qm/?__a=1&__user=61580483256667&__comet_req=15&jazoest=25428",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0066,
+          40.7126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "157.240.241.174",
+        "url": "https://www.instagram.com/ajax/bz?__a=1&__ccg=GOOD&__comet_req=7&__crn=comet.igweb.PolarisFeedRoute&__d=www&__hs=20663.HYP%3Ainstagram_web_pkg.2.1...0&__hsi=7667958182241098846&__req=1&__rev=1044050712&__s=j9mcfw%3Ajgtj31%3Al0s3gd&__spin_b=trunk&__spin_r=1044050712&__spin_t=1785335639&__user=0&dpr=1&fb_dtsg=NAfzva2MRvI17caG2AhIU5zDjPb8hvA2rtvHdpf6W07w3p_KHpr4HuA%3A17865553615041151%3A1785335531&jazoest=26201&lsd=qdVhq5np4_SnB_Zyl158zL&ph=C3",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0066,
+          40.7126
+        ]
+      }
+    }
+  ]
+}

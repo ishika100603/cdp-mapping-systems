@@ -1,0 +1,245 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:818::2001",
+        "url": "https://yt3.ggpht.com/HA1P2baH4_tEwWAq6YAVym8Qe4db_tAuBZXesx2q544D2nfOK17IN8-AJAaVKc8cKlansS4ye1vdph0=s512-rw-nd-v1",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:810::2016",
+        "url": "https://i.ytimg.com/vi/c35fpGWqXnk/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDwXZ7_SHkd2hByzTjOqzoLVG3ZYw",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "142.250.65.70",
+        "url": "https://ad.doubleclick.net/ddm/trackimp/N5295.5087813DEMANDGEN/B34614698.452687517;dc_pre=CNDT2u3u_ZUDFeoHIQQdKm4jcg;dc_trk_aid=628526056;dc_trk_cid=246611925;ord=261550477;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=;gdpr_consent=;ltd=;dc_tdv=1;dc_rui=1;dc_exteid=6955857388540327741;dc_av=0;dc_sk=0;dc_ctype=161;dc_ref=https://www.youtube.com;dc_eps=AHas8cAUoTYCQnXygC4XHxRVNewLCa6cJXGw31uT88MkjoX3mHBC1uys5zTJikwg96KU-dvVVHu-DS8uPtJ8vg;dc_pubid=2;dc_btype=23?gclid=CjwKCAjwj7HTBhBiEiwA8s35OsKqzNzvKe0-vkO7OMeQD-l02nOP3KT8EiLEKfcNWsZSpC_2o2VcXBoCK1wQAvD_BwE&ase=2",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0369,
+          38.9072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2001:4860:482d:400::",
+        "url": "https://www.youtube.com/",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5674,
+          45.5019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:8::7",
+        "url": "https://rr2---sn-ab5l6nr6.googlevideo.com/videoplayback?expire=1785555163&ei=exRtap-4CKSeoPMP7aaX6QQ&ip=2603%3A7001%3Ae0f0%3Ab6f0%3Aa55d%3Ade44%3A760e%3A3bea&id=o-AE5S7F10_I3T-IG5sJGACC_PSne4Sf1pxk1pddv_KiPC&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&met=1785533563%2C&mh=XS&mm=31%2C29&mn=sn-ab5l6nr6%2Csn-ab5sznzr&ms=au%2Crdu&mv=m&mvi=2&pl=36&rms=au%2Cau&initcwndbps=3726250&siu=1&spc=KBGBclXeAAWwAi8aX-cN2WrXemX8B959Xl1fdUkRH7kE6rKAgJ_5aKI&svpuc=1&ns=kXkek_2g20js4c850hi_ExoX&sabr=1&rqh=1&mt=1785533144&fvip=3&keepalive=yes&fexp=51565116%2C51973818&c=WEB&n=qTXebUo9BWJr-w&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Csiu%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&sig=AE0s2JYwRQIgCmI8q6F6d_UMf-2Xcu4YbdcjG1Btoj7bIiGXX5QoWFoCIQClUgF2QRkrAWPQeetb9Y3gUqcp9gw54azR_i7HffOQkQ%3D%3D&lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhAJLIZ2SC0wVS4UXEaro4APSUipQXbDvUjq1DcA94hzlYAiEAyRK0iQeGUpUlTplC0aFndJGqZEwv8LxV6a-e53BxW-o%3D&cpn=ubFy5S4qPv_a1hXB&cver=2.20260731.00.00&rn=1&alr=yes",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:823::200e",
+        "url": "https://accounts.youtube.com/RotateCookiesPage?origin=https://www.youtube.com&yt_pid=1",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:811::2003",
+        "url": "https://www.gstatic.com/eureka/clank/150/cast_sender.js",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2001:4860:4826:7700::",
+        "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.IdentityRotateCookiesHttp.en_US.UkpguSiaNUI.2018.O/am=BIgABw/d=1/rs=AOaEmlEjIApTzpB1UpaNakBNlAw1JJY5BQ/m=hfcr",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5674,
+          45.5019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:804::2001",
+        "url": "https://lh3.googleusercontent.com/9WPWlw76wxCv_woizsE84X7q-SdF_Q3iwRH4atC1Q3Jf-sEzg9X6WukIOrKnDuUkGGzRPds=s240-c-k-c0x00ffffff-no-rj",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:814::2006",
+        "url": "https://static.doubleclick.net/instream/ad_status.js",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:80f::200e",
+        "url": "https://studio.youtube.com/persist_identity",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:80f::2003",
+        "url": "https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMaxKUBGEe.woff2",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:802::2003",
+        "url": "https://www.gstatic.com/youtube/img/creator/video_collaborations/cluster_size_32x32_avatars_2_index_0.svg",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2001:4860:4826:400::",
+        "url": "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5674,
+          45.5019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2001:4860:482b:400::",
+        "url": "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5674,
+          45.5019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:818::2002",
+        "url": "https://googleads.g.doubleclick.net/pagead/id",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    }
+  ]
+}

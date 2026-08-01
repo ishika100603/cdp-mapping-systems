@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_44f030f0c0de10790171dc9d49f61c82 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_44f030f0c0de10790171dc9d49f61c82" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_44f030f0c0de10790171dc9d49f61c82 = L.map(
+                "map_44f030f0c0de10790171dc9d49f61c82",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_57b05429f864f9a271726552d579d46b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_57b05429f864f9a271726552d579d46b.addTo(map_44f030f0c0de10790171dc9d49f61c82);
+        
+    
+            var marker_cluster_ceb5074d537328673dcbca4398416611 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_a6bb4195d6367b0e14dd5012d068d1d2 = L.marker(
+                [40.7126, -74.0066],
+                {
+}
+            ).addTo(marker_cluster_ceb5074d537328673dcbca4398416611);
+        
+    
+            var icon_1bd79b059b3173542e58ff81ec419003 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b8265db95068aeaff62f4b80ae20dcad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7667d0077e82d4ea4a64d491858239a6 = $(`<div id="html_7667d0077e82d4ea4a64d491858239a6" style="width: 100.0%; height: 100.0%;">IP: 57.144.180.192<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc<br>URL: https://scontent-lga3-3.cdninstagram.com/o1/v/t2/f2/m78/AQOyWwtn0rfEwCxpaU9h7t1vZPcnqelWtyOAEerRb4NhyeTmz1xff30GkM1VXAPry-2hojiB7SkXAxDsm272ZUnKtUHfOzIaBEAu5po.mp4?_nc_cat=1&_nc_sid=9ca052&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_ohc=lbheiZou5_sQ7kNvwENY6mJ&efg=eyJ2ZW5jb2RlX3RhZyI6ImlnLXhwdmRzLmNsaXBzLmMyLUMzLmRhc2hfbG5faGVhYWNfdmJyM19hdWRpbyIsInZpZGVvX2lkIjpudWxsLCJvaWxfdXJsZ2VuX2FwcF9pZCI6OTM2NjE5NzQzMzkyNDU5LCJjbGllbnRfbmFtZSI6ImlnIiwieHB2X2Fzc2V0X2lkIjoxNjU3ODE3MDA5MDk0ODUyLCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjEwLCJiaXRyYXRlIjo1OTUzMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=hS72gz771J7cEaJlEUI9Gw&_nc_ss=7a22e&_nc_zt=28&oh=00_AQBQGqzcUVciKXDBauBadrAa7mTIF94nF2PS4M19iRGEpA&oe=6A6BFE2A&bytestart=0&byteend=823</div>`)[0];
+                popup_b8265db95068aeaff62f4b80ae20dcad.setContent(html_7667d0077e82d4ea4a64d491858239a6);
+            
+        
+
+        marker_a6bb4195d6367b0e14dd5012d068d1d2.bindPopup(popup_b8265db95068aeaff62f4b80ae20dcad)
+        ;
+
+        
+    
+    
+                marker_a6bb4195d6367b0e14dd5012d068d1d2.setIcon(icon_1bd79b059b3173542e58ff81ec419003);
+            
+    
+            var marker_fd20ae7c5df885bc11cebeb35eaf1f4b = L.marker(
+                [40.7126, -74.0066],
+                {
+}
+            ).addTo(marker_cluster_ceb5074d537328673dcbca4398416611);
+        
+    
+            var icon_9edde35767694762de625c94b4d4adb8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_90218c5c2d0881ed2ddfe7464d7e990b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f347a88256d7689f0641adf6913d92fd = $(`<div id="html_f347a88256d7689f0641adf6913d92fd" style="width: 100.0%; height: 100.0%;">IP: 157.240.241.63<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc.<br>URL: https://static.cdninstagram.com/rsrc.php/v4iJZz4/yM/l/en_US-j/Lne3eFBxtJn.js</div>`)[0];
+                popup_90218c5c2d0881ed2ddfe7464d7e990b.setContent(html_f347a88256d7689f0641adf6913d92fd);
+            
+        
+
+        marker_fd20ae7c5df885bc11cebeb35eaf1f4b.bindPopup(popup_90218c5c2d0881ed2ddfe7464d7e990b)
+        ;
+
+        
+    
+    
+                marker_fd20ae7c5df885bc11cebeb35eaf1f4b.setIcon(icon_9edde35767694762de625c94b4d4adb8);
+            
+    
+            var marker_a1729a4f30e028328299feb18c85385c = L.marker(
+                [40.7126, -74.0066],
+                {
+}
+            ).addTo(marker_cluster_ceb5074d537328673dcbca4398416611);
+        
+    
+            var icon_53e77468adf6077477c999c1e52463a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f60abf03e1043e3064c8bf8d9dabfd17 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_baff87a86ef121b3d14ae6ed8239efee = $(`<div id="html_baff87a86ef121b3d14ae6ed8239efee" style="width: 100.0%; height: 100.0%;">IP: 157.240.241.174<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc.<br>URL: https://www.instagram.com/sync/instagram/</div>`)[0];
+                popup_f60abf03e1043e3064c8bf8d9dabfd17.setContent(html_baff87a86ef121b3d14ae6ed8239efee);
+            
+        
+
+        marker_a1729a4f30e028328299feb18c85385c.bindPopup(popup_f60abf03e1043e3064c8bf8d9dabfd17)
+        ;
+
+        
+    
+    
+                marker_a1729a4f30e028328299feb18c85385c.setIcon(icon_53e77468adf6077477c999c1e52463a2);
+            
+    
+            var marker_c86c9ab7d10ad055ab1e2ffa741b24e8 = L.marker(
+                [40.7126, -74.0066],
+                {
+}
+            ).addTo(marker_cluster_ceb5074d537328673dcbca4398416611);
+        
+    
+            var icon_e0f507bb46ca3b44f51e08e40c3b66d9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6798a758ca0b0b04d55257d7bab9d64e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99667deec5b83ade17dfee66851cd78a = $(`<div id="html_99667deec5b83ade17dfee66851cd78a" style="width: 100.0%; height: 100.0%;">IP: 157.240.241.1<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc.<br>URL: https://static.xx.fbcdn.net/rsrc.php/v4/yY/r/DdJWXfKx0yD.js</div>`)[0];
+                popup_6798a758ca0b0b04d55257d7bab9d64e.setContent(html_99667deec5b83ade17dfee66851cd78a);
+            
+        
+
+        marker_c86c9ab7d10ad055ab1e2ffa741b24e8.bindPopup(popup_6798a758ca0b0b04d55257d7bab9d64e)
+        ;
+
+        
+    
+    
+                marker_c86c9ab7d10ad055ab1e2ffa741b24e8.setIcon(icon_e0f507bb46ca3b44f51e08e40c3b66d9);
+            
+    
+            var marker_8a74f83a3a32461b7756c1d2b7d8d77d = L.marker(
+                [40.7126, -74.0066],
+                {
+}
+            ).addTo(marker_cluster_ceb5074d537328673dcbca4398416611);
+        
+    
+            var icon_5dd88d4e2426d894944f37d7f6e678fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_37ae576f1a5dfd3efbdd261e7f5492aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_35ff04b0298c33fc1cea660132ea5c45 = $(`<div id="html_35ff04b0298c33fc1cea660132ea5c45" style="width: 100.0%; height: 100.0%;">IP: 31.13.71.52<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc<br>URL: https://scontent-lga3-1.cdninstagram.com/o1/v/t2/f2/m367/AQM2i45-JYC2OHkLm1YQWPgBiHzyI_p_c0C3RHldS4uPhtddvyNB-2i2PGg8upYCqhZB5jRMkl5C1T3jPFG0ZGmEpSderHCwuYrCn0Qi9v8Oew.mp4?_nc_cat=103&_nc_sid=9ca052&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_ohc=shiQNDAMh_8Q7kNvwHus0lG&efg=eyJ2ZW5jb2RlX3RhZyI6ImlnLXhwdmRzLmNsaXBzLmMyLUMzLmRhc2hfdnA5LWJhc2ljLWdlbjJfMTA4MHAiLCJ2aWRlb19pZCI6bnVsbCwib2lsX3VybGdlbl9hcHBfaWQiOjkzNjYxOTc0MzM5MjQ1OSwiY2xpZW50X25hbWUiOiJpZyIsInhwdl9hc3NldF9pZCI6OTI1NTg1MDU5ODIyMjE0LCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjE2LCJiaXRyYXRlIjoyNTkzNzM2LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=ohBZQ5Rt0zXhWioDa1yLLA&_nc_ss=7a22e&_nc_zt=28&oh=00_AQBN_MTRgyYy1FUzzDIi1A87teSnKrvH6nbtIU6f0dz5ZQ&oe=6A6FD7D5&bytestart=0&byteend=817</div>`)[0];
+                popup_37ae576f1a5dfd3efbdd261e7f5492aa.setContent(html_35ff04b0298c33fc1cea660132ea5c45);
+            
+        
+
+        marker_8a74f83a3a32461b7756c1d2b7d8d77d.bindPopup(popup_37ae576f1a5dfd3efbdd261e7f5492aa)
+        ;
+
+        
+    
+    
+                marker_8a74f83a3a32461b7756c1d2b7d8d77d.setIcon(icon_5dd88d4e2426d894944f37d7f6e678fb);
+            
+    
+            var marker_0ca8f6e1aaa42ad2fbd84aa1576d99bb = L.marker(
+                [40.7126, -74.0066],
+                {
+}
+            ).addTo(marker_cluster_ceb5074d537328673dcbca4398416611);
+        
+    
+            var icon_b7e5f93d7056b06d81a86c4b470ecdcb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6a38e5f1825cc7aeda9573e8a5c4c677 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50eedb5f5c2ebb5ac255c8f2ad63fbae = $(`<div id="html_50eedb5f5c2ebb5ac255c8f2ad63fbae" style="width: 100.0%; height: 100.0%;">IP: 157.240.241.35<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc.<br>URL: https://www.facebook.com/instagram/login_sync/</div>`)[0];
+                popup_6a38e5f1825cc7aeda9573e8a5c4c677.setContent(html_50eedb5f5c2ebb5ac255c8f2ad63fbae);
+            
+        
+
+        marker_0ca8f6e1aaa42ad2fbd84aa1576d99bb.bindPopup(popup_6a38e5f1825cc7aeda9573e8a5c4c677)
+        ;
+
+        
+    
+    
+                marker_0ca8f6e1aaa42ad2fbd84aa1576d99bb.setIcon(icon_b7e5f93d7056b06d81a86c4b470ecdcb);
+            
+    
+            marker_cluster_ceb5074d537328673dcbca4398416611.addTo(map_44f030f0c0de10790171dc9d49f61c82);
+        
+</script>
+</html>

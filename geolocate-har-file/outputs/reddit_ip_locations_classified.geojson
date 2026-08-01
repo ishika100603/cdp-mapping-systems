@@ -1,0 +1,215 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2a04:4e42:3d::396",
+        "url": "https://www.redditstatic.com/js/concat?prefix=en-US/&chunks=C90eBq_gT9,CJgmADX7X2,H9EDW9at2V,xgYSrd2C71",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0066,
+          40.7126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "199.232.1.140",
+        "url": "https://www.reddit.com/svc/shreddit/events",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0066,
+          40.7126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2600:141b:1c00:158d::b45",
+        "url": "https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.056,
+          40.7908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:80e::2008",
+        "url": "https://www.googletagmanager.com/gtag/js?id=AW-788729857",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "35.244.154.8",
+        "url": "https://id.rlcdn.com/472486.gif",
+        "provider": "Google Cloud"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.5785,
+          39.0997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2001:4860:482b:7700::",
+        "url": "https://www.google.com/recaptcha/enterprise.js?render=6LfirrMoAAAAAHZOipvza4kpp_VtTwLNuXVwURNQ",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5674,
+          45.5019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2606:4700::6812:ab7",
+        "url": "https://w3-reporting.reddit.com/reports",
+        "provider": "Cloudflare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5674,
+          45.5019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "142.251.45.163",
+        "url": "https://www.gstatic.com/recaptcha/releases/A7KpaEASfhDcK0nXxgQEyyYv/recaptcha__en.js",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:81f::2001",
+        "url": "https://lh3.googleusercontent.com/a/ACg8ocKiczbRmPePQfiSSt6PtTa8NWmFcToWSRJ8PlkS5PUa-sMJaA=s96-c",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:819::2002",
+        "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/788729857/?random=1785534040874&cv=11&fst=1785534040874&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be67t1v9217137991za200zd9217137991xec&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938465~115938469~118131810~118395335~118897920~118897930~119896802&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.reddit.com%2F&ref=https%3A%2F%2Fwww.google.com%2F&rcb=5&frm=0&tiba=Reddit%20-%20The%20heart%20of%20the%20internet&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1128795842.1785534028&uaa=x86&uab=64&uafvl=Not%253BA%253DBrand%3B8.0.0.0%7CChromium%3B150.0.7871.187%7CGoogle%2520Chrome%3B150.0.7871.187&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&data=event%3Dgtag.config&ept=9&rfmt=3&fmt=4",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2001:4860:4828:7700::",
+        "url": "https://accounts.google.com/gsi/fedcm/listaccounts",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5674,
+          45.5019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:810::2003",
+        "url": "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4004:c1d::54",
+        "url": "https://accounts.google.com/gsi/fedcm/config/passive.json",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.03637,
+          38.89511
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ip": "2607:f8b0:4006:804::2003",
+        "url": "https://www.gstatic.com/recaptcha/api2/logo_48.png",
+        "provider": "Other/Unclassified"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.085,
+          37.4225
+        ]
+      }
+    }
+  ]
+}

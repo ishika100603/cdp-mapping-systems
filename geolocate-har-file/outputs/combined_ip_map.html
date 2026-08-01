@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8506db9c8192b36fb6c9503f8ec604b9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 200px; left: 20px; z-index: 9999;
+                background: white; padding: 10px 14px; border: 2px solid #444;
+                border-radius: 6px; font-size: 12px; font-family: sans-serif;">
+    <b>Owner Legend</b><br>
+    <span style="color:purple;">&#9679;</span> Facebook<br>
+    <span style="color:green;">&#9679;</span> Google<br>
+    <span style="color:orange;">&#9679;</span> Amazon<br>
+    <span style="color:red;">&#9679;</span> Fastly<br>
+    <span style="color:blue;">&#9679;</span> Cloudflare<br>
+    <span style="color:darkred;">&#9679;</span> Akamai<br>
+    <span style="color:gray;">&#9679;</span> Other
+    </div>
+    
+    
+    <div style="position: fixed; bottom: 20px; left: 20px; z-index: 9999;
+                background: white; padding: 10px 14px; border: 2px solid #444;
+                border-radius: 6px; max-width: 340px; font-size: 12px; font-family: sans-serif;">
+    <b>Note:</b> Marker colors show the company that owns the IP address
+    (via ISP/org lookup), not the platform being visited. Numbered circles
+    are clusters of multiple points sharing the same registered location -
+    click to expand. For CDN-fronted sites, location reflects the registered
+    IP block address, not necessarily the physical server location.
+    </div>
+    
+    
+            <div class="folium-map" id="map_8506db9c8192b36fb6c9503f8ec604b9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8506db9c8192b36fb6c9503f8ec604b9 = L.map(
+                "map_8506db9c8192b36fb6c9503f8ec604b9",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f4cb1c9003aa1deb0a108b1569eec919 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f4cb1c9003aa1deb0a108b1569eec919.addTo(map_8506db9c8192b36fb6c9503f8ec604b9);
+        
+    
+            var feature_group_422d56f7ec9120901088c7b84f9d3495 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_8f519d005ba6810b8c605c70046d0051 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_47b0b02d2601ada12040a51c413e7e8b = L.circleMarker(
+                [40.7908, -74.056],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_b47f4c13dd40be863bd7a7ad09982f5c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b66e58ee636f23601b834b30c128ab2a = $(`<div id="html_b66e58ee636f23601b834b30c128ab2a" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Akamai<br>IP: 2600:141b:1c00:d95::3bd4<br>ISP: Akamai International B.V.<br>Org: Akamai Technologies<br>URL: https://www.amazon.com/tt/i</div>`)[0];
+                popup_b47f4c13dd40be863bd7a7ad09982f5c.setContent(html_b66e58ee636f23601b834b30c128ab2a);
+            
+        
+
+        circle_marker_47b0b02d2601ada12040a51c413e7e8b.bindPopup(popup_b47f4c13dd40be863bd7a7ad09982f5c)
+        ;
+
+        
+    
+    
+            var circle_marker_4c3b397875c802fd1a03c13d3da22b2f = L.circleMarker(
+                [47.6157, -122.336],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_6c963a9bcf79864e8bdf6e189ab8acee = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_01fc9c8d360fdc91c30da6d25d6a66ea = $(`<div id="html_01fc9c8d360fdc91c30da6d25d6a66ea" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 2600:9000:2209:6200:1d:d7f6:39d6:4401<br>ISP: Amazon.com, Inc.<br>Org: AWS CloudFront (GLOBAL)<br>URL: https://m.media-amazon.com/images/I/01IEzbjyWWL.js?xcp</div>`)[0];
+                popup_6c963a9bcf79864e8bdf6e189ab8acee.setContent(html_01fc9c8d360fdc91c30da6d25d6a66ea);
+            
+        
+
+        circle_marker_4c3b397875c802fd1a03c13d3da22b2f.bindPopup(popup_6c963a9bcf79864e8bdf6e189ab8acee)
+        ;
+
+        
+    
+    
+            var circle_marker_974a836accdbfc40027f8378a32ff803 = L.circleMarker(
+                [40.7399, -74.1691],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_5e9e78f599c796f5b754762e24e96e44 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_731e0f8bf62e39997c3a993b78f9e14d = $(`<div id="html_731e0f8bf62e39997c3a993b78f9e14d" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Fastly<br>IP: 2a04:4e42:56::272<br>ISP: Fastly, Inc.<br>Org: Fastly, Inc<br>URL: https://m.media-amazon.com/images/I/61izMLE+ooL._SR427,684_.jpg</div>`)[0];
+                popup_5e9e78f599c796f5b754762e24e96e44.setContent(html_731e0f8bf62e39997c3a993b78f9e14d);
+            
+        
+
+        circle_marker_974a836accdbfc40027f8378a32ff803.bindPopup(popup_5e9e78f599c796f5b754762e24e96e44)
+        ;
+
+        
+    
+    
+            var circle_marker_03c91fcbb20d0aaf36b49f793184c7cd = L.circleMarker(
+                [39.0438, -77.4874],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_a645149a7d472c6ad20fb9817c40b84e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8799b9c0a3e93146d0e06fa2c3810881 = $(`<div id="html_8799b9c0a3e93146d0e06fa2c3810881" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 44.215.129.188<br>ISP: Amazon.com<br>Org: Amazon Technologies Inc. (us-east-1)<br>URL: https://unagi.amazon.com/1/events/com.amazon.csm.customsg.prod</div>`)[0];
+                popup_a645149a7d472c6ad20fb9817c40b84e.setContent(html_8799b9c0a3e93146d0e06fa2c3810881);
+            
+        
+
+        circle_marker_03c91fcbb20d0aaf36b49f793184c7cd.bindPopup(popup_a645149a7d472c6ad20fb9817c40b84e)
+        ;
+
+        
+    
+    
+            var circle_marker_e8f2940b2d88cf68079e5f429b9add08 = L.circleMarker(
+                [39.0438, -77.4874],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_20bedb204605f9aedd3854535c419c6b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ddf605dc8b7bb10c42686ba5f72cbab7 = $(`<div id="html_ddf605dc8b7bb10c42686ba5f72cbab7" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 100.59.252.48<br>ISP: Amazon.com, Inc.<br>Org: AWS EC2 (us-east-1)<br>URL: https://fls-na.amazon.com/1/batch/1/OP/ATVPDKIKX0DER:141-0876938-1078333:H7EJA3B...</div>`)[0];
+                popup_20bedb204605f9aedd3854535c419c6b.setContent(html_ddf605dc8b7bb10c42686ba5f72cbab7);
+            
+        
+
+        circle_marker_e8f2940b2d88cf68079e5f429b9add08.bindPopup(popup_20bedb204605f9aedd3854535c419c6b)
+        ;
+
+        
+    
+    
+            var circle_marker_c2688daa5ddd036493137ab553f45a52 = L.circleMarker(
+                [47.6157, -122.336],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_65347e2ee6d32b04eee9b2e67e6a0978 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ff13b337fd5261656beedfaead876538 = $(`<div id="html_ff13b337fd5261656beedfaead876538" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 2600:9000:2510:c200:1d:d7f6:39d6:4401<br>ISP: Amazon.com, Inc.<br>Org: AWS CloudFront (GLOBAL)<br>URL: https://images-na.ssl-images-amazon.com/images/I/215h87l68bL.js</div>`)[0];
+                popup_65347e2ee6d32b04eee9b2e67e6a0978.setContent(html_ff13b337fd5261656beedfaead876538);
+            
+        
+
+        circle_marker_c2688daa5ddd036493137ab553f45a52.bindPopup(popup_65347e2ee6d32b04eee9b2e67e6a0978)
+        ;
+
+        
+    
+    
+            var circle_marker_e2c698346615c9fc6b05e7120c387082 = L.circleMarker(
+                [40.7908, -74.056],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_091c8492b511ea02bf9a9f26c28a7227 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b6bbb1f837fa21d6fc6cd7286e6dbc2e = $(`<div id="html_b6bbb1f837fa21d6fc6cd7286e6dbc2e" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Akamai<br>IP: 2600:141b:1c00:2e::1730:e009<br>ISP: Akamai International B.V.<br>Org: Akamai Technologies<br>URL: https://m.media-amazon.com/images/G/01/msa/vowels/metrics.jpg?time=1785464821036...</div>`)[0];
+                popup_091c8492b511ea02bf9a9f26c28a7227.setContent(html_b6bbb1f837fa21d6fc6cd7286e6dbc2e);
+            
+        
+
+        circle_marker_e2c698346615c9fc6b05e7120c387082.bindPopup(popup_091c8492b511ea02bf9a9f26c28a7227)
+        ;
+
+        
+    
+    
+            var circle_marker_29101d41d2563e9d4768cf1889daa3ea = L.circleMarker(
+                [39.0438, -77.4874],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_6c81ce715bc11cf6ed28ab94da665a8b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1c1c161318601f9602eb8f834b56fd5a = $(`<div id="html_1c1c161318601f9602eb8f834b56fd5a" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 44.215.116.52<br>ISP: Amazon.com<br>Org: Amazon Technologies Inc. (us-east-1)<br>URL: https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod</div>`)[0];
+                popup_6c81ce715bc11cf6ed28ab94da665a8b.setContent(html_1c1c161318601f9602eb8f834b56fd5a);
+            
+        
+
+        circle_marker_29101d41d2563e9d4768cf1889daa3ea.bindPopup(popup_6c81ce715bc11cf6ed28ab94da665a8b)
+        ;
+
+        
+    
+    
+            var circle_marker_cc6fd6993f786a592d7acd34f7aa41e3 = L.circleMarker(
+                [39.0438, -77.4874],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_5086cc8d4d5724d8f8053d8f72fa8d8e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2face0957e8a00a7373a7bc77fca196f = $(`<div id="html_2face0957e8a00a7373a7bc77fca196f" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 18.235.224.217<br>ISP: Amazon.com, Inc.<br>Org: AWS EC2 (us-east-1)<br>URL: https://usersync.samplicio.us/amazon/pixel.gif?https://s.amazon-adsystem.com/ecm...</div>`)[0];
+                popup_5086cc8d4d5724d8f8053d8f72fa8d8e.setContent(html_2face0957e8a00a7373a7bc77fca196f);
+            
+        
+
+        circle_marker_cc6fd6993f786a592d7acd34f7aa41e3.bindPopup(popup_5086cc8d4d5724d8f8053d8f72fa8d8e)
+        ;
+
+        
+    
+    
+            var circle_marker_96f390d4cf88b40833fa3a9d690ed7f1 = L.circleMarker(
+                [39.0438, -77.4874],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_c77ce0fc83dee207d685de470bdab0f6 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_758f501cd6e41c90ee1127893177716b = $(`<div id="html_758f501cd6e41c90ee1127893177716b" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 98.82.154.76<br>ISP: Amazon.com, Inc.<br>Org: Amazon Technologies Inc. (us-east-1)<br>URL: https://s.amazon-adsystem.com/iu3?d=amazon.com&slot=navFooter&a2=0101e661c359e13...</div>`)[0];
+                popup_c77ce0fc83dee207d685de470bdab0f6.setContent(html_758f501cd6e41c90ee1127893177716b);
+            
+        
+
+        circle_marker_96f390d4cf88b40833fa3a9d690ed7f1.bindPopup(popup_c77ce0fc83dee207d685de470bdab0f6)
+        ;
+
+        
+    
+    
+            var circle_marker_f9ba6ddf255ad4cedbde1d71125340eb = L.circleMarker(
+                [39.0438, -77.4874],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_aa35afb6fc03b2ce136b1c1d20441b4f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_577be16aab4f80df622e03e2ed79df65 = $(`<div id="html_577be16aab4f80df622e03e2ed79df65" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 44.215.137.152<br>ISP: Amazon.com<br>Org: Amazon Technologies Inc. (us-east-1)<br>URL: https://unagi-na.amazon.com/1/events/com.amazon.BotCXPolicy.na.prod.bd</div>`)[0];
+                popup_aa35afb6fc03b2ce136b1c1d20441b4f.setContent(html_577be16aab4f80df622e03e2ed79df65);
+            
+        
+
+        circle_marker_f9ba6ddf255ad4cedbde1d71125340eb.bindPopup(popup_aa35afb6fc03b2ce136b1c1d20441b4f)
+        ;
+
+        
+    
+    
+            var circle_marker_43f7b401cfaf3cbd74d866d191ffe7d4 = L.circleMarker(
+                [39.0438, -77.4874],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_1b3c89f17857f5e8fa1db9d55adb84ab = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_907e2518bc152965e26c83f7dd89c5aa = $(`<div id="html_907e2518bc152965e26c83f7dd89c5aa" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 44.215.139.172<br>ISP: Amazon.com<br>Org: Amazon Technologies Inc. (us-east-1)<br>URL: https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod</div>`)[0];
+                popup_1b3c89f17857f5e8fa1db9d55adb84ab.setContent(html_907e2518bc152965e26c83f7dd89c5aa);
+            
+        
+
+        circle_marker_43f7b401cfaf3cbd74d866d191ffe7d4.bindPopup(popup_1b3c89f17857f5e8fa1db9d55adb84ab)
+        ;
+
+        
+    
+    
+            var circle_marker_16aa6db4b6646e834fef74a6bfb48e24 = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_8f519d005ba6810b8c605c70046d0051);
+        
+    
+        var popup_4f704b068751dcdf657a3652af3ad999 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e34f8047e5da6d38721889f778e36669 = $(`<div id="html_e34f8047e5da6d38721889f778e36669" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Amazon<br><b>Owner:</b> Amazon<br>IP: 13.33.61.87<br>ISP: Amazon.com, Inc.<br>Org: AWS CloudFront (GLOBAL)<br>URL: https://c.amazon-adsystem.com/bao-csm/forensics/a9-tq-forensics-incremental.min....</div>`)[0];
+                popup_4f704b068751dcdf657a3652af3ad999.setContent(html_e34f8047e5da6d38721889f778e36669);
+            
+        
+
+        circle_marker_16aa6db4b6646e834fef74a6bfb48e24.bindPopup(popup_4f704b068751dcdf657a3652af3ad999)
+        ;
+
+        
+    
+    
+            marker_cluster_8f519d005ba6810b8c605c70046d0051.addTo(feature_group_422d56f7ec9120901088c7b84f9d3495);
+        
+    
+            feature_group_422d56f7ec9120901088c7b84f9d3495.addTo(map_8506db9c8192b36fb6c9503f8ec604b9);
+        
+    
+            var feature_group_b2ae0849538eabb5307f2e1cb79d7cad = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_921d2187964f4f77f794f4df2ff126ee = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_510d612b8022ef563d4ed3b4d8707425 = L.circleMarker(
+                [43.6532, -79.3832],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_9c40a2179d247829d96de09e21321b9c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_79b949d44692e3668f63593a61be066a = $(`<div id="html_79b949d44692e3668f63593a61be066a" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Cloudflare<br>IP: 162.159.138.64<br>ISP: Cloudflare, Inc.<br>Org: Cloudflare, Inc.<br>URL: https://www.columbia.edu/content/themes/custom/columbia/assets/img/right_gray_ou...</div>`)[0];
+                popup_9c40a2179d247829d96de09e21321b9c.setContent(html_79b949d44692e3668f63593a61be066a);
+            
+        
+
+        circle_marker_510d612b8022ef563d4ed3b4d8707425.bindPopup(popup_9c40a2179d247829d96de09e21321b9c)
+        ;
+
+        
+    
+    
+            var circle_marker_b97c2a0824edd0258298d602a7bd416d = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_ede9ae18dec5a0893de310b0f8bb77e2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_af1296302416964857abaf04e338bdba = $(`<div id="html_af1296302416964857abaf04e338bdba" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Fastly<br>IP: 199.232.36.217<br>ISP: Fastly, Inc.<br>Org: Fastly, Inc.<br>URL: https://f.vimeocdn.com/p/4.46.85/css/player.css</div>`)[0];
+                popup_ede9ae18dec5a0893de310b0f8bb77e2.setContent(html_af1296302416964857abaf04e338bdba);
+            
+        
+
+        circle_marker_b97c2a0824edd0258298d602a7bd416d.bindPopup(popup_ede9ae18dec5a0893de310b0f8bb77e2)
+        ;
+
+        
+    
+    
+            var circle_marker_f9450752b6205d611f54dbc5b5da1e61 = L.circleMarker(
+                [39.0997, -94.5785],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_5cb8ad7c53ae91d62baedca5e8ca5aed = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9c4e337e07032aa0956f3efeb8b1475c = $(`<div id="html_9c4e337e07032aa0956f3efeb8b1475c" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Google<br>IP: 34.120.202.204<br>ISP: Google LLC<br>Org: Google Cloud<br>URL: https://arclight.vimeo.com/add/player-stats?beacon=1&session-id=e0af822e64243659...</div>`)[0];
+                popup_5cb8ad7c53ae91d62baedca5e8ca5aed.setContent(html_9c4e337e07032aa0956f3efeb8b1475c);
+            
+        
+
+        circle_marker_f9450752b6205d611f54dbc5b5da1e61.bindPopup(popup_5cb8ad7c53ae91d62baedca5e8ca5aed)
+        ;
+
+        
+    
+    
+            var circle_marker_287936145cf37d3ce4846da7961234e8 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_a9b14a8d0b20646625c19990332679cf = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_dfd0fcf098bb6e6b1000d1d0faa72b48 = $(`<div id="html_dfd0fcf098bb6e6b1000d1d0faa72b48" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:802::2003<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.gstatic.com/cast/sdk/libs/sender/1.0/cast_framework.js</div>`)[0];
+                popup_a9b14a8d0b20646625c19990332679cf.setContent(html_dfd0fcf098bb6e6b1000d1d0faa72b48);
+            
+        
+
+        circle_marker_287936145cf37d3ce4846da7961234e8.bindPopup(popup_a9b14a8d0b20646625c19990332679cf)
+        ;
+
+        
+    
+    
+            var circle_marker_bd0acad539e43cbd676369ae30068259 = L.circleMarker(
+                [40.7908, -74.056],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_b7fa49fad6e9a3e15046cd4d5e626f50 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_99717eef4295a9d99f568fe16eae6c78 = $(`<div id="html_99717eef4295a9d99f568fe16eae6c78" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Akamai<br>IP: 2600:141b:1c00:8::1728:b346<br>ISP: Akamai International B.V.<br>Org: Akamai Technologies<br>URL: https://use.typekit.net/af/2011b6/00000000000000003b9b00c1/27/l?primer=7fa3915bd...</div>`)[0];
+                popup_b7fa49fad6e9a3e15046cd4d5e626f50.setContent(html_99717eef4295a9d99f568fe16eae6c78);
+            
+        
+
+        circle_marker_bd0acad539e43cbd676369ae30068259.bindPopup(popup_b7fa49fad6e9a3e15046cd4d5e626f50)
+        ;
+
+        
+    
+    
+            var circle_marker_068809b93d464b09bffb9b48b12fb197 = L.circleMarker(
+                [43.6532, -79.3832],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_27890a7751f3f374b6a0fa1400e80e4a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a5fb124e6f9b8e0f67eeec9e2d894620 = $(`<div id="html_a5fb124e6f9b8e0f67eeec9e2d894620" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Cloudflare<br>IP: 162.159.128.61<br>ISP: Cloudflare, Inc.<br>Org: Cloudflare, Inc.<br>URL: https://player.vimeo.com/video/1205007125?badge=0&autopause=0&player_id=0&app_id...</div>`)[0];
+                popup_27890a7751f3f374b6a0fa1400e80e4a.setContent(html_a5fb124e6f9b8e0f67eeec9e2d894620);
+            
+        
+
+        circle_marker_068809b93d464b09bffb9b48b12fb197.bindPopup(popup_27890a7751f3f374b6a0fa1400e80e4a)
+        ;
+
+        
+    
+    
+            var circle_marker_aa4357a5753b3976c5d05c436ed845d0 = L.circleMarker(
+                [50.1109, 8.68213],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_d06908837886efc8b54da14240d41494 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e04c700543bde581a20df41b14ada357 = $(`<div id="html_e04c700543bde581a20df41b14ada357" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Fastly<br>IP: 2a04:4e42:400::411<br>ISP: Fastly, Inc.<br>Org: Fastly, Inc<br>URL: https://code.jquery.com/ui/1.12.1/jquery-ui.min.js</div>`)[0];
+                popup_d06908837886efc8b54da14240d41494.setContent(html_e04c700543bde581a20df41b14ada357);
+            
+        
+
+        circle_marker_aa4357a5753b3976c5d05c436ed845d0.bindPopup(popup_d06908837886efc8b54da14240d41494)
+        ;
+
+        
+    
+    
+            var circle_marker_9576a163fa8ace654339b941916cd26a = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_aa65b37299b730f415b0e90f066869b8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d0ae38046573afc75c5d9cb942074f3c = $(`<div id="html_d0ae38046573afc75c5d9cb942074f3c" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Cloudflare<br>IP: 2606:4700::6811:190e<br>ISP: Cloudflare, Inc.<br>Org: Cloudflare, Inc.<br>URL: https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-wi...</div>`)[0];
+                popup_aa65b37299b730f415b0e90f066869b8.setContent(html_d0ae38046573afc75c5d9cb942074f3c);
+            
+        
+
+        circle_marker_9576a163fa8ace654339b941916cd26a.bindPopup(popup_aa65b37299b730f415b0e90f066869b8)
+        ;
+
+        
+    
+    
+            var circle_marker_43fd4736046489877df833d7625c71dd = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_234f1df9b26eff6a00fe89f33e5884cd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_53e526b6d5ee56e8343159981fa269ff = $(`<div id="html_53e526b6d5ee56e8343159981fa269ff" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:814::2008<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.googletagmanager.com/gtag/js?id=UA-18290390-1</div>`)[0];
+                popup_234f1df9b26eff6a00fe89f33e5884cd.setContent(html_53e526b6d5ee56e8343159981fa269ff);
+            
+        
+
+        circle_marker_43fd4736046489877df833d7625c71dd.bindPopup(popup_234f1df9b26eff6a00fe89f33e5884cd)
+        ;
+
+        
+    
+    
+            var circle_marker_986ca085db556f02c522d5485e21d340 = L.circleMarker(
+                [43.6532, -79.3832],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_5577d9fdb7052d118d3770681d0fb886 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4d293492feb675687f41b51bacb5e495 = $(`<div id="html_4d293492feb675687f41b51bacb5e495" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Cloudflare<br>IP: 162.159.138.60<br>ISP: Cloudflare, Inc.<br>Org: Cloudflare, Inc.<br>URL: https://player.vimeo.com/api/player.js</div>`)[0];
+                popup_5577d9fdb7052d118d3770681d0fb886.setContent(html_4d293492feb675687f41b51bacb5e495);
+            
+        
+
+        circle_marker_986ca085db556f02c522d5485e21d340.bindPopup(popup_5577d9fdb7052d118d3770681d0fb886)
+        ;
+
+        
+    
+    
+            var circle_marker_40928d37c2bd5f48f3eba8a85a31e664 = L.circleMarker(
+                [40.7908, -74.056],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_b6deb7c1e085b23119dd0c596e38b0c2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6eaf2d1373a4b91ec3b6db46e114afda = $(`<div id="html_6eaf2d1373a4b91ec3b6db46e114afda" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Akamai<br>IP: 2600:141b:1c00:8::1728:b338<br>ISP: Akamai International B.V.<br>Org: Akamai Technologies<br>URL: https://p.typekit.net/p.gif?s=1&k=rke7urc&ht=tk&h=www.columbia.edu&f=139.171.173...</div>`)[0];
+                popup_b6deb7c1e085b23119dd0c596e38b0c2.setContent(html_6eaf2d1373a4b91ec3b6db46e114afda);
+            
+        
+
+        circle_marker_40928d37c2bd5f48f3eba8a85a31e664.bindPopup(popup_b6deb7c1e085b23119dd0c596e38b0c2)
+        ;
+
+        
+    
+    
+            var circle_marker_92317900fe530ea68b5596b3b8aa23e9 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_34ef884403a1f3ff0d6d27014c96e873 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7776ac8c5b651bceb836d1fe55dd2e19 = $(`<div id="html_7776ac8c5b651bceb836d1fe55dd2e19" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:803::200e<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.google-analytics.com/analytics.js</div>`)[0];
+                popup_34ef884403a1f3ff0d6d27014c96e873.setContent(html_7776ac8c5b651bceb836d1fe55dd2e19);
+            
+        
+
+        circle_marker_92317900fe530ea68b5596b3b8aa23e9.bindPopup(popup_34ef884403a1f3ff0d6d27014c96e873)
+        ;
+
+        
+    
+    
+            var circle_marker_d8268845be5fff5dab12b11cc214eeb0 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_55f1b05a575aa6dbe4769f44f46985c4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_70ee41a153874dd90205bc1928bd2775 = $(`<div id="html_70ee41a153874dd90205bc1928bd2775" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:811::2003<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.gstatic.com/eureka/clank/150/cast_sender.js</div>`)[0];
+                popup_55f1b05a575aa6dbe4769f44f46985c4.setContent(html_70ee41a153874dd90205bc1928bd2775);
+            
+        
+
+        circle_marker_d8268845be5fff5dab12b11cc214eeb0.bindPopup(popup_55f1b05a575aa6dbe4769f44f46985c4)
+        ;
+
+        
+    
+    
+            var circle_marker_fba68f071e8c5af83d6bad60e948d52a = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_635e56f481ae525ca940fdf9980d4cfd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3fff57c9b599bfe576b74be26f1fd0ad = $(`<div id="html_3fff57c9b599bfe576b74be26f1fd0ad" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Google<br>IP: 2001:4860:4828:7700::<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.youtube.com/s/player/bed7a914/www-widgetapi.vflset/www-widgetapi.js</div>`)[0];
+                popup_635e56f481ae525ca940fdf9980d4cfd.setContent(html_3fff57c9b599bfe576b74be26f1fd0ad);
+            
+        
+
+        circle_marker_fba68f071e8c5af83d6bad60e948d52a.bindPopup(popup_635e56f481ae525ca940fdf9980d4cfd)
+        ;
+
+        
+    
+    
+            var circle_marker_e53172a5397f7e44f3fc1e7ef49d73bf = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_0d2ec89aadb90cb98551b25d278454c1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_483d0155385c492f4655aad5b8cb2cd0 = $(`<div id="html_483d0155385c492f4655aad5b8cb2cd0" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Google<br>IP: 2001:4860:482c:400::<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.youtube.com/iframe_api</div>`)[0];
+                popup_0d2ec89aadb90cb98551b25d278454c1.setContent(html_483d0155385c492f4655aad5b8cb2cd0);
+            
+        
+
+        circle_marker_e53172a5397f7e44f3fc1e7ef49d73bf.bindPopup(popup_0d2ec89aadb90cb98551b25d278454c1)
+        ;
+
+        
+    
+    
+            var circle_marker_b2c4c870e9098cff91f0425b128cbd82 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_921d2187964f4f77f794f4df2ff126ee);
+        
+    
+        var popup_1de14998945bd32ded2351c0cdf3ba77 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ca80e4c470ed03946d360541eee19fc5 = $(`<div id="html_ca80e4c470ed03946d360541eee19fc5" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Columbia<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:800::200e<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://analytics.google.com/g/collect?v=2&tid=G-09H1KYXPLX&gtm=45je67t1h1v91046...</div>`)[0];
+                popup_1de14998945bd32ded2351c0cdf3ba77.setContent(html_ca80e4c470ed03946d360541eee19fc5);
+            
+        
+
+        circle_marker_b2c4c870e9098cff91f0425b128cbd82.bindPopup(popup_1de14998945bd32ded2351c0cdf3ba77)
+        ;
+
+        
+    
+    
+            marker_cluster_921d2187964f4f77f794f4df2ff126ee.addTo(feature_group_b2ae0849538eabb5307f2e1cb79d7cad);
+        
+    
+            feature_group_b2ae0849538eabb5307f2e1cb79d7cad.addTo(map_8506db9c8192b36fb6c9503f8ec604b9);
+        
+    
+            var feature_group_2baa0c43bea8cc2eaebff9eda938218c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_bb50c964144a416c678a2b1babe22d2d = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_d5f80faeba6aab4c0d312c29886286d3 = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_bb50c964144a416c678a2b1babe22d2d);
+        
+    
+        var popup_c4d80fc74248c548c84027152187858c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f7c4972167a80015514d0dec1b05e351 = $(`<div id="html_f7c4972167a80015514d0dec1b05e351" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Instagram<br><b>Owner:</b> Facebook<br>IP: 57.144.180.192<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc<br>URL: https://scontent-lga3-3.cdninstagram.com/o1/v/t2/f2/m78/AQOyWwtn0rfEwCxpaU9h7t1v...</div>`)[0];
+                popup_c4d80fc74248c548c84027152187858c.setContent(html_f7c4972167a80015514d0dec1b05e351);
+            
+        
+
+        circle_marker_d5f80faeba6aab4c0d312c29886286d3.bindPopup(popup_c4d80fc74248c548c84027152187858c)
+        ;
+
+        
+    
+    
+            var circle_marker_0705d86d14c932c4c3fd5bf8489947dc = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_bb50c964144a416c678a2b1babe22d2d);
+        
+    
+        var popup_242fbb73c3082d672fe5bbb27bedef86 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0e73c678fb3f98aba8bc55d40ac1fe01 = $(`<div id="html_0e73c678fb3f98aba8bc55d40ac1fe01" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Instagram<br><b>Owner:</b> Facebook<br>IP: 157.240.241.63<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc.<br>URL: https://static.cdninstagram.com/rsrc.php/v4iJZz4/yM/l/en_US-j/Lne3eFBxtJn.js</div>`)[0];
+                popup_242fbb73c3082d672fe5bbb27bedef86.setContent(html_0e73c678fb3f98aba8bc55d40ac1fe01);
+            
+        
+
+        circle_marker_0705d86d14c932c4c3fd5bf8489947dc.bindPopup(popup_242fbb73c3082d672fe5bbb27bedef86)
+        ;
+
+        
+    
+    
+            var circle_marker_f2d64cdb57406033ef2d99832784cb9e = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_bb50c964144a416c678a2b1babe22d2d);
+        
+    
+        var popup_554c3edae6d845b967081f045a6d05b7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_636fee811332a4cf257674582c9b5be7 = $(`<div id="html_636fee811332a4cf257674582c9b5be7" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Instagram<br><b>Owner:</b> Facebook<br>IP: 157.240.241.174<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc.<br>URL: https://www.instagram.com/sync/instagram/</div>`)[0];
+                popup_554c3edae6d845b967081f045a6d05b7.setContent(html_636fee811332a4cf257674582c9b5be7);
+            
+        
+
+        circle_marker_f2d64cdb57406033ef2d99832784cb9e.bindPopup(popup_554c3edae6d845b967081f045a6d05b7)
+        ;
+
+        
+    
+    
+            var circle_marker_a159e8e66463cef9838e47f453489941 = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_bb50c964144a416c678a2b1babe22d2d);
+        
+    
+        var popup_daa0646c9f6a226eeaf702d531f44322 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c0eb0fa0619d95063e373758aac13507 = $(`<div id="html_c0eb0fa0619d95063e373758aac13507" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Instagram<br><b>Owner:</b> Facebook<br>IP: 157.240.241.1<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc.<br>URL: https://static.xx.fbcdn.net/rsrc.php/v4/yY/r/DdJWXfKx0yD.js</div>`)[0];
+                popup_daa0646c9f6a226eeaf702d531f44322.setContent(html_c0eb0fa0619d95063e373758aac13507);
+            
+        
+
+        circle_marker_a159e8e66463cef9838e47f453489941.bindPopup(popup_daa0646c9f6a226eeaf702d531f44322)
+        ;
+
+        
+    
+    
+            var circle_marker_686ad404791617e8adf598651f03d41c = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_bb50c964144a416c678a2b1babe22d2d);
+        
+    
+        var popup_1f7ae7eef3b8793528286071e997083b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ac3562acfc47dd1a55f91c15967dd2d2 = $(`<div id="html_ac3562acfc47dd1a55f91c15967dd2d2" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Instagram<br><b>Owner:</b> Facebook<br>IP: 31.13.71.52<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc<br>URL: https://scontent-lga3-1.cdninstagram.com/o1/v/t2/f2/m367/AQM2i45-JYC2OHkLm1YQWPg...</div>`)[0];
+                popup_1f7ae7eef3b8793528286071e997083b.setContent(html_ac3562acfc47dd1a55f91c15967dd2d2);
+            
+        
+
+        circle_marker_686ad404791617e8adf598651f03d41c.bindPopup(popup_1f7ae7eef3b8793528286071e997083b)
+        ;
+
+        
+    
+    
+            var circle_marker_6d64e67e1cba4a461fc673d4794f0fe9 = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_bb50c964144a416c678a2b1babe22d2d);
+        
+    
+        var popup_360cfcf4f5cb4b91b5a8eadd295f5017 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b38b72d3dbbcab6272c1d48f8f0ead61 = $(`<div id="html_b38b72d3dbbcab6272c1d48f8f0ead61" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Instagram<br><b>Owner:</b> Facebook<br>IP: 157.240.241.35<br>ISP: Facebook, Inc.<br>Org: Facebook, Inc.<br>URL: https://www.facebook.com/instagram/login_sync/</div>`)[0];
+                popup_360cfcf4f5cb4b91b5a8eadd295f5017.setContent(html_b38b72d3dbbcab6272c1d48f8f0ead61);
+            
+        
+
+        circle_marker_6d64e67e1cba4a461fc673d4794f0fe9.bindPopup(popup_360cfcf4f5cb4b91b5a8eadd295f5017)
+        ;
+
+        
+    
+    
+            marker_cluster_bb50c964144a416c678a2b1babe22d2d.addTo(feature_group_2baa0c43bea8cc2eaebff9eda938218c);
+        
+    
+            feature_group_2baa0c43bea8cc2eaebff9eda938218c.addTo(map_8506db9c8192b36fb6c9503f8ec604b9);
+        
+    
+            var feature_group_980de98f3ee88a671c941182afee56f7 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_ac4df601a7318b3fe1c642b77b93c298 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_bf925ed5c801a5c2fe3767b097ef0968 = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_771858d1e0195a1c53b92888b810314f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a9fb7511cb411587529373dcb27d27b4 = $(`<div id="html_a9fb7511cb411587529373dcb27d27b4" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Fastly<br>IP: 2a04:4e42:3d::396<br>ISP: Fastly, Inc.<br>Org: Fastly, Inc<br>URL: https://www.redditstatic.com/js/concat?prefix=en-US/&chunks=8mAt_CUDml,BKt_N4sFp...</div>`)[0];
+                popup_771858d1e0195a1c53b92888b810314f.setContent(html_a9fb7511cb411587529373dcb27d27b4);
+            
+        
+
+        circle_marker_bf925ed5c801a5c2fe3767b097ef0968.bindPopup(popup_771858d1e0195a1c53b92888b810314f)
+        ;
+
+        
+    
+    
+            var circle_marker_a8449fe1ce76a107faab7b71db79572c = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_6b1e94b7bb1b552a68ae83370eb407e5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_faae33d63c63fd6a14aee58b17a656f4 = $(`<div id="html_faae33d63c63fd6a14aee58b17a656f4" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 2001:4860:482b:7700::<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6LfirrMoAAAAAHZOipvza4...</div>`)[0];
+                popup_6b1e94b7bb1b552a68ae83370eb407e5.setContent(html_faae33d63c63fd6a14aee58b17a656f4);
+            
+        
+
+        circle_marker_a8449fe1ce76a107faab7b71db79572c.bindPopup(popup_6b1e94b7bb1b552a68ae83370eb407e5)
+        ;
+
+        
+    
+    
+            var circle_marker_1a07dea5d0ff2969f0634e1b8b38e954 = L.circleMarker(
+                [40.7908, -74.056],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_8eeaca9cf9e0988891a79fbb7c5e9385 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c2f7dca0fe8929c00bc4db4200b98294 = $(`<div id="html_c2f7dca0fe8929c00bc4db4200b98294" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Akamai<br>IP: 2600:141b:1c00:158d::b45<br>ISP: Akamai International B.V.<br>Org: Akamai Technologies<br>URL: https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.aut...</div>`)[0];
+                popup_8eeaca9cf9e0988891a79fbb7c5e9385.setContent(html_c2f7dca0fe8929c00bc4db4200b98294);
+            
+        
+
+        circle_marker_1a07dea5d0ff2969f0634e1b8b38e954.bindPopup(popup_8eeaca9cf9e0988891a79fbb7c5e9385)
+        ;
+
+        
+    
+    
+            var circle_marker_2c9d575fbbf2c776f4e123d10a2053e8 = L.circleMarker(
+                [40.7126, -74.0066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_12656241915ae14ccd4b55f2b6229f4c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1dad32e692337a353e6776e0b7a67a32 = $(`<div id="html_1dad32e692337a353e6776e0b7a67a32" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Fastly<br>IP: 199.232.1.140<br>ISP: Fastly, Inc.<br>Org: Fastly, Inc.<br>URL: https://www.reddit.com/svc/shreddit/graphql</div>`)[0];
+                popup_12656241915ae14ccd4b55f2b6229f4c.setContent(html_1dad32e692337a353e6776e0b7a67a32);
+            
+        
+
+        circle_marker_2c9d575fbbf2c776f4e123d10a2053e8.bindPopup(popup_12656241915ae14ccd4b55f2b6229f4c)
+        ;
+
+        
+    
+    
+            var circle_marker_99b4637521d0614e54fa1bbeca440122 = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_b27348b41e150ada8e78e33c08371543 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1ddafb96fcf635084929ce25c3063df2 = $(`<div id="html_1ddafb96fcf635084929ce25c3063df2" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Cloudflare<br>IP: 2606:4700::6812:ab7<br>ISP: Cloudflare, Inc.<br>Org: Cloudflare, Inc.<br>URL: https://w3-reporting.reddit.com/policy</div>`)[0];
+                popup_b27348b41e150ada8e78e33c08371543.setContent(html_1ddafb96fcf635084929ce25c3063df2);
+            
+        
+
+        circle_marker_99b4637521d0614e54fa1bbeca440122.bindPopup(popup_b27348b41e150ada8e78e33c08371543)
+        ;
+
+        
+    
+    
+            var circle_marker_35f38512d38ed10cdb9eef614f04118e = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_dbf05aaba625e79bde68207a630e3f99 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_35220a12b97100d5f618f0c1de9adc72 = $(`<div id="html_35220a12b97100d5f618f0c1de9adc72" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:810::2003<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.wo...</div>`)[0];
+                popup_dbf05aaba625e79bde68207a630e3f99.setContent(html_35220a12b97100d5f618f0c1de9adc72);
+            
+        
+
+        circle_marker_35f38512d38ed10cdb9eef614f04118e.bindPopup(popup_dbf05aaba625e79bde68207a630e3f99)
+        ;
+
+        
+    
+    
+            var circle_marker_55bf11429505c1360a3dea163c88475a = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_30e4c471bad31a3e01428bfd432744ea = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_92379990bc4150bcdb61c5f2272f0d26 = $(`<div id="html_92379990bc4150bcdb61c5f2272f0d26" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 142.251.45.163<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.gstatic.com/recaptcha/releases/A7KpaEASfhDcK0nXxgQEyyYv/styles__ltr....</div>`)[0];
+                popup_30e4c471bad31a3e01428bfd432744ea.setContent(html_92379990bc4150bcdb61c5f2272f0d26);
+            
+        
+
+        circle_marker_55bf11429505c1360a3dea163c88475a.bindPopup(popup_30e4c471bad31a3e01428bfd432744ea)
+        ;
+
+        
+    
+    
+            var circle_marker_9ad756b9e4344b886d2948f11464e4ad = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_f92763c62dc5b39456ea6c2e97ed2dcf = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_347f3d5e72fb3ecb851b66c80e3b09d0 = $(`<div id="html_347f3d5e72fb3ecb851b66c80e3b09d0" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:804::2003<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.gstatic.com/recaptcha/api2/logo_48.png</div>`)[0];
+                popup_f92763c62dc5b39456ea6c2e97ed2dcf.setContent(html_347f3d5e72fb3ecb851b66c80e3b09d0);
+            
+        
+
+        circle_marker_9ad756b9e4344b886d2948f11464e4ad.bindPopup(popup_f92763c62dc5b39456ea6c2e97ed2dcf)
+        ;
+
+        
+    
+    
+            var circle_marker_0068efa23e6f9694a6b0e4700dc6b6b0 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_ae2e6508b0c9270d0847e4343617a562 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7507bd0edcf50b9f355d54d77f381ede = $(`<div id="html_7507bd0edcf50b9f355d54d77f381ede" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:81f::2001<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://lh3.googleusercontent.com/a/ACg8ocKiczbRmPePQfiSSt6PtTa8NWmFcToWSRJ8PlkS...</div>`)[0];
+                popup_ae2e6508b0c9270d0847e4343617a562.setContent(html_7507bd0edcf50b9f355d54d77f381ede);
+            
+        
+
+        circle_marker_0068efa23e6f9694a6b0e4700dc6b6b0.bindPopup(popup_ae2e6508b0c9270d0847e4343617a562)
+        ;
+
+        
+    
+    
+            var circle_marker_86f582966fd69f1170c8b192fcd6c0b7 = L.circleMarker(
+                [39.0997, -94.5785],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_dcb489a1f767aba2d70c426d77a03ab8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8a1ad08d444ba604d74ae3f3243be0b5 = $(`<div id="html_8a1ad08d444ba604d74ae3f3243be0b5" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 35.244.154.8<br>ISP: Google LLC<br>Org: Google Cloud<br>URL: https://id.rlcdn.com/472486.gif</div>`)[0];
+                popup_dcb489a1f767aba2d70c426d77a03ab8.setContent(html_8a1ad08d444ba604d74ae3f3243be0b5);
+            
+        
+
+        circle_marker_86f582966fd69f1170c8b192fcd6c0b7.bindPopup(popup_dcb489a1f767aba2d70c426d77a03ab8)
+        ;
+
+        
+    
+    
+            var circle_marker_24917d9e91322a4acab35c871aa0b957 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_9c21b7a0d222df7c8de39bf341e54ae8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b3a8c2f0b321a82720ca1b8d443d2e3a = $(`<div id="html_b3a8c2f0b321a82720ca1b8d443d2e3a" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:80e::2008<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.googletagmanager.com/gtag/js?id=AW-788729857</div>`)[0];
+                popup_9c21b7a0d222df7c8de39bf341e54ae8.setContent(html_b3a8c2f0b321a82720ca1b8d443d2e3a);
+            
+        
+
+        circle_marker_24917d9e91322a4acab35c871aa0b957.bindPopup(popup_9c21b7a0d222df7c8de39bf341e54ae8)
+        ;
+
+        
+    
+    
+            var circle_marker_9ee04c812e4306d8f8521ae679657ad0 = L.circleMarker(
+                [38.89511, -77.03637],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_aa8c69fbe06d913ee1e7ebfe38713a6a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_82776b903f14d4507718a166fa63f6b7 = $(`<div id="html_82776b903f14d4507718a166fa63f6b7" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4004:c1d::54<br>ISP: Google LLC<br>Org: Google Public DNS (iad)<br>URL: https://accounts.google.com/gsi/client</div>`)[0];
+                popup_aa8c69fbe06d913ee1e7ebfe38713a6a.setContent(html_82776b903f14d4507718a166fa63f6b7);
+            
+        
+
+        circle_marker_9ee04c812e4306d8f8521ae679657ad0.bindPopup(popup_aa8c69fbe06d913ee1e7ebfe38713a6a)
+        ;
+
+        
+    
+    
+            var circle_marker_327473b28714c9b846db0862c414cd37 = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_b56e92bc10c285025e425bef251ba5de = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bd6f4e0704601f20a271ae20469c66a7 = $(`<div id="html_bd6f4e0704601f20a271ae20469c66a7" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 2001:4860:4828:7700::<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://accounts.google.com/gsi/fedcm/listaccounts</div>`)[0];
+                popup_b56e92bc10c285025e425bef251ba5de.setContent(html_bd6f4e0704601f20a271ae20469c66a7);
+            
+        
+
+        circle_marker_327473b28714c9b846db0862c414cd37.bindPopup(popup_b56e92bc10c285025e425bef251ba5de)
+        ;
+
+        
+    
+    
+            var circle_marker_c489791eee83338648136924a6be70ab = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_ac4df601a7318b3fe1c642b77b93c298);
+        
+    
+        var popup_70b873febe0e7ca2ce493bec82e6429b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e2aa2b94649e788b38fb26802bc3ea25 = $(`<div id="html_e2aa2b94649e788b38fb26802bc3ea25" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> Reddit<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:819::2002<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://googleads.g.doubleclick.net/pagead/viewthroughconversion/788729857/?rand...</div>`)[0];
+                popup_70b873febe0e7ca2ce493bec82e6429b.setContent(html_e2aa2b94649e788b38fb26802bc3ea25);
+            
+        
+
+        circle_marker_c489791eee83338648136924a6be70ab.bindPopup(popup_70b873febe0e7ca2ce493bec82e6429b)
+        ;
+
+        
+    
+    
+            marker_cluster_ac4df601a7318b3fe1c642b77b93c298.addTo(feature_group_980de98f3ee88a671c941182afee56f7);
+        
+    
+            feature_group_980de98f3ee88a671c941182afee56f7.addTo(map_8506db9c8192b36fb6c9503f8ec604b9);
+        
+    
+            var feature_group_a89a5af797e588d67a65b1d9e89a6abd = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_9ff153e08b4f2d88d3ebc7ab68f56402 = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_185eb1df1229a31c57ae785f8fecd104 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_de8e2852cebcc8f49cea6e7eb1fba59c = $(`<div id="html_de8e2852cebcc8f49cea6e7eb1fba59c" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2001:4860:482d:400::<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.youtube.com/api/stats/qoe?fmt=396&afmt=251&cpn=ubFy5S4qPv_a1hXB&el=d...</div>`)[0];
+                popup_185eb1df1229a31c57ae785f8fecd104.setContent(html_de8e2852cebcc8f49cea6e7eb1fba59c);
+            
+        
+
+        circle_marker_9ff153e08b4f2d88d3ebc7ab68f56402.bindPopup(popup_185eb1df1229a31c57ae785f8fecd104)
+        ;
+
+        
+    
+    
+            var circle_marker_5847800cfdf9089cb915343165b43cc7 = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_e91e79bb4addfe2729c48786c8d38d9b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_33f5bd4b9e0f6b4c86557a455d6ee669 = $(`<div id="html_33f5bd4b9e0f6b4c86557a455d6ee669" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2001:4860:4826:7700::<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.google.com/pagead/lvz?evtid=ACd6Ktx2EgcGtuwI8z3Kuu2gjKJv0mP0b55YgzZc...</div>`)[0];
+                popup_e91e79bb4addfe2729c48786c8d38d9b.setContent(html_33f5bd4b9e0f6b4c86557a455d6ee669);
+            
+        
+
+        circle_marker_5847800cfdf9089cb915343165b43cc7.bindPopup(popup_e91e79bb4addfe2729c48786c8d38d9b)
+        ;
+
+        
+    
+    
+            var circle_marker_74fdddf0c755f54a4870132a0ece8a74 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_448d5069a41a9522e73e864039af2e31 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_75ce4ceab122d764901f7accbcb36eee = $(`<div id="html_75ce4ceab122d764901f7accbcb36eee" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:8::7<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://rr2---sn-ab5l6nr6.googlevideo.com/videoplayback?expire=1785555163&ei=exR...</div>`)[0];
+                popup_448d5069a41a9522e73e864039af2e31.setContent(html_75ce4ceab122d764901f7accbcb36eee);
+            
+        
+
+        circle_marker_74fdddf0c755f54a4870132a0ece8a74.bindPopup(popup_448d5069a41a9522e73e864039af2e31)
+        ;
+
+        
+    
+    
+            var circle_marker_cfdb7888b859c9a695a09f8330e6d153 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_cb971f924d2e2587755925cdd7c54f62 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1cee329fb592d8f4ce9b31afa2595cff = $(`<div id="html_1cee329fb592d8f4ce9b31afa2595cff" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:814::2006<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://static.doubleclick.net/instream/ad_status.js</div>`)[0];
+                popup_cb971f924d2e2587755925cdd7c54f62.setContent(html_1cee329fb592d8f4ce9b31afa2595cff);
+            
+        
+
+        circle_marker_cfdb7888b859c9a695a09f8330e6d153.bindPopup(popup_cb971f924d2e2587755925cdd7c54f62)
+        ;
+
+        
+    
+    
+            var circle_marker_44a242215c4e0ad41d934e6eaa9e80d4 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_338bb407c468c740cee33059c7be9cd8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b7e7b35c2a70a819b6a30910f1272b07 = $(`<div id="html_b7e7b35c2a70a819b6a30910f1272b07" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:810::2016<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://i.ytimg.com/vi/3jUfr6rXcbM/hqdefault.jpg?sqp=-oaymwFACKgBEF5IWvKriqkDMwg...</div>`)[0];
+                popup_338bb407c468c740cee33059c7be9cd8.setContent(html_b7e7b35c2a70a819b6a30910f1272b07);
+            
+        
+
+        circle_marker_44a242215c4e0ad41d934e6eaa9e80d4.bindPopup(popup_338bb407c468c740cee33059c7be9cd8)
+        ;
+
+        
+    
+    
+            var circle_marker_fab6417c3726f1b9d9feaaf8d17516c6 = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_bf6d854cbe7b9c88b0ed15f3845788f3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_87607629f93b02e839b41aebe986529e = $(`<div id="html_87607629f93b02e839b41aebe986529e" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2001:4860:4826:400::<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.youtube.com/youtubei/v1/log_event?alt=json</div>`)[0];
+                popup_bf6d854cbe7b9c88b0ed15f3845788f3.setContent(html_87607629f93b02e839b41aebe986529e);
+            
+        
+
+        circle_marker_fab6417c3726f1b9d9feaaf8d17516c6.bindPopup(popup_bf6d854cbe7b9c88b0ed15f3845788f3)
+        ;
+
+        
+    
+    
+            var circle_marker_3b9f6b2aff74b3bc793b4c401feeb14d = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_62e03d2112eecd6d0ae51599ce0fdab8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_317494faa2192caa91cf036b0516fc59 = $(`<div id="html_317494faa2192caa91cf036b0516fc59" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:818::2001<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://yt3.ggpht.com/VunTf0NzCeboiPjbesBdnQuxaF3Lja7UGRbBGQAWRJgMSTj9TTLO3pS1X9...</div>`)[0];
+                popup_62e03d2112eecd6d0ae51599ce0fdab8.setContent(html_317494faa2192caa91cf036b0516fc59);
+            
+        
+
+        circle_marker_3b9f6b2aff74b3bc793b4c401feeb14d.bindPopup(popup_62e03d2112eecd6d0ae51599ce0fdab8)
+        ;
+
+        
+    
+    
+            var circle_marker_e3e817896d73afc1f429e7d0ee486c0b = L.circleMarker(
+                [38.9072, -77.0369],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_f4baeb7fcb724d45ec524962ca8752f5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_43c233d6ee9a495ae6722bfae7caa63c = $(`<div id="html_43c233d6ee9a495ae6722bfae7caa63c" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 142.250.65.70<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://ad.doubleclick.net/ddm/trackimp/N5295.5087813DEMANDGEN/B34614698.4526875...</div>`)[0];
+                popup_f4baeb7fcb724d45ec524962ca8752f5.setContent(html_43c233d6ee9a495ae6722bfae7caa63c);
+            
+        
+
+        circle_marker_e3e817896d73afc1f429e7d0ee486c0b.bindPopup(popup_f4baeb7fcb724d45ec524962ca8752f5)
+        ;
+
+        
+    
+    
+            var circle_marker_46418f26999a1395f0703483b9f30ddc = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_a6eccb8d1bf2163d058dcf498b5099e1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f76f9a31d4200873e72d7507376457be = $(`<div id="html_f76f9a31d4200873e72d7507376457be" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:804::2001<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://lh3.googleusercontent.com/9WPWlw76wxCv_woizsE84X7q-SdF_Q3iwRH4atC1Q3Jf-s...</div>`)[0];
+                popup_a6eccb8d1bf2163d058dcf498b5099e1.setContent(html_f76f9a31d4200873e72d7507376457be);
+            
+        
+
+        circle_marker_46418f26999a1395f0703483b9f30ddc.bindPopup(popup_a6eccb8d1bf2163d058dcf498b5099e1)
+        ;
+
+        
+    
+    
+            var circle_marker_5b23b23fc59cb740b0165fcbf992c331 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_8e78d1c37a1764f631a73b3e8c9774df = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6d338c824311dfa5cb382efadc9ad9a9 = $(`<div id="html_6d338c824311dfa5cb382efadc9ad9a9" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:818::2002<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://googleads.g.doubleclick.net/pagead/id</div>`)[0];
+                popup_8e78d1c37a1764f631a73b3e8c9774df.setContent(html_6d338c824311dfa5cb382efadc9ad9a9);
+            
+        
+
+        circle_marker_5b23b23fc59cb740b0165fcbf992c331.bindPopup(popup_8e78d1c37a1764f631a73b3e8c9774df)
+        ;
+
+        
+    
+    
+            var circle_marker_56e4338715ca58773b4d6185528c80de = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_d86f8691e0dc8766f0b191ac8d5e608d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0a360262c1aaa4e2d6c03cfcf3cc2d55 = $(`<div id="html_0a360262c1aaa4e2d6c03cfcf3cc2d55" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:80f::200e<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://studio.youtube.com/persist_identity</div>`)[0];
+                popup_d86f8691e0dc8766f0b191ac8d5e608d.setContent(html_0a360262c1aaa4e2d6c03cfcf3cc2d55);
+            
+        
+
+        circle_marker_56e4338715ca58773b4d6185528c80de.bindPopup(popup_d86f8691e0dc8766f0b191ac8d5e608d)
+        ;
+
+        
+    
+    
+            var circle_marker_41a7708034aa819cd077b4043ba8a0c3 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_e335a6d2ac4600dec32aa7e21dcdd84a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_40d3a18e9caabc417736c48aa2ce700c = $(`<div id="html_40d3a18e9caabc417736c48aa2ce700c" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:823::200e<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://accounts.youtube.com/RotateCookiesPage?origin=https://www.youtube.com&yt...</div>`)[0];
+                popup_e335a6d2ac4600dec32aa7e21dcdd84a.setContent(html_40d3a18e9caabc417736c48aa2ce700c);
+            
+        
+
+        circle_marker_41a7708034aa819cd077b4043ba8a0c3.bindPopup(popup_e335a6d2ac4600dec32aa7e21dcdd84a)
+        ;
+
+        
+    
+    
+            var circle_marker_59219db229adcb62c1b0e86f6cab735b = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_5d81db3023d7ac1abf60161371151cef = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9aa3763d736557fc952def211e7c282b = $(`<div id="html_9aa3763d736557fc952def211e7c282b" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:80f::2003<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.wo...</div>`)[0];
+                popup_5d81db3023d7ac1abf60161371151cef.setContent(html_9aa3763d736557fc952def211e7c282b);
+            
+        
+
+        circle_marker_59219db229adcb62c1b0e86f6cab735b.bindPopup(popup_5d81db3023d7ac1abf60161371151cef)
+        ;
+
+        
+    
+    
+            var circle_marker_e932273d82faebabba506d6de08a3f41 = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_908087794648e8d135843d026a58fc68 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_94225fb8966ed98323191d3d48592ca5 = $(`<div id="html_94225fb8966ed98323191d3d48592ca5" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:811::2003<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.gstatic.com/eureka/clank/150/cast_sender.js</div>`)[0];
+                popup_908087794648e8d135843d026a58fc68.setContent(html_94225fb8966ed98323191d3d48592ca5);
+            
+        
+
+        circle_marker_e932273d82faebabba506d6de08a3f41.bindPopup(popup_908087794648e8d135843d026a58fc68)
+        ;
+
+        
+    
+    
+            var circle_marker_59e0cc4c0482383be9910787daac0588 = L.circleMarker(
+                [45.5019, -73.5674],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_fcc24fb5458a213ee1970bb6486b7d3a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2bfe62b6d2b6b7627bdab5e7a4b31a48 = $(`<div id="html_2bfe62b6d2b6b7627bdab5e7a4b31a48" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2001:4860:482b:400::<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.youtube.com/youtubei/v1/log_event?alt=json</div>`)[0];
+                popup_fcc24fb5458a213ee1970bb6486b7d3a.setContent(html_2bfe62b6d2b6b7627bdab5e7a4b31a48);
+            
+        
+
+        circle_marker_59e0cc4c0482383be9910787daac0588.bindPopup(popup_fcc24fb5458a213ee1970bb6486b7d3a)
+        ;
+
+        
+    
+    
+            var circle_marker_380f7baa277eb4d137e8b38d022b124f = L.circleMarker(
+                [37.4225, -122.085],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc);
+        
+    
+        var popup_c9126f530235c58938b2c75ef39aa14b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ad206ebf1113f65f0924e4f329f29d7b = $(`<div id="html_ad206ebf1113f65f0924e4f329f29d7b" style="width: 100.0%; height: 100.0%;"><b>Platform:</b> YouTube Music<br><b>Owner:</b> Google<br>IP: 2607:f8b0:4006:802::2003<br>ISP: Google LLC<br>Org: Google LLC<br>URL: https://www.gstatic.com/youtube/img/creator/video_collaborations/cluster_size_32...</div>`)[0];
+                popup_c9126f530235c58938b2c75ef39aa14b.setContent(html_ad206ebf1113f65f0924e4f329f29d7b);
+            
+        
+
+        circle_marker_380f7baa277eb4d137e8b38d022b124f.bindPopup(popup_c9126f530235c58938b2c75ef39aa14b)
+        ;
+
+        
+    
+    
+            marker_cluster_b6ff90c8a804910c8ad5967e2be1c7bc.addTo(feature_group_a89a5af797e588d67a65b1d9e89a6abd);
+        
+    
+            feature_group_a89a5af797e588d67a65b1d9e89a6abd.addTo(map_8506db9c8192b36fb6c9503f8ec604b9);
+        
+    
+            var layer_control_5d4294968e52a1b2d679171d46023bc9_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_f4cb1c9003aa1deb0a108b1569eec919,
+                },
+                overlays :  {
+                    "Amazon (13)" : feature_group_422d56f7ec9120901088c7b84f9d3495,
+                    "Columbia (16)" : feature_group_b2ae0849538eabb5307f2e1cb79d7cad,
+                    "Instagram (6)" : feature_group_2baa0c43bea8cc2eaebff9eda938218c,
+                    "Reddit (14)" : feature_group_980de98f3ee88a671c941182afee56f7,
+                    "YouTube Music (16)" : feature_group_a89a5af797e588d67a65b1d9e89a6abd,
+                },
+            };
+            let layer_control_5d4294968e52a1b2d679171d46023bc9 = L.control.layers(
+                layer_control_5d4294968e52a1b2d679171d46023bc9_layers.base_layers,
+                layer_control_5d4294968e52a1b2d679171d46023bc9_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_8506db9c8192b36fb6c9503f8ec604b9);
+
+        
+</script>
+</html>
