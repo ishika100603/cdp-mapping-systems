@@ -254,3 +254,6 @@ Web map live link: (https://ishika100603.github.io/cdp-mapping-systems/geolocate
 ![Full world view of the combined map](06-final-project-web-map.png)
 
 ![Zoomed view of the Amazon AWS cluster near Virginia and DC](06-final-project-web-map-zoomed.png)
+
+
+please note: all the geoJSON and html files for the final project are in geolocate-har-file/outputs
