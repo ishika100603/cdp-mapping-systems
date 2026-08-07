@@ -244,7 +244,7 @@ than a list of loose ideas.
   this question going forward.
 
 ---
-Web map live link: to be added
+Web map live link: (https://ishika100603.github.io/cdp-mapping-systems/geolocate-har-file/outputs/combined_ip_map.html)
 
 * Screenshots of the combined map are saved in the Assignments folder as
   `06-final-project-web-map.png` (full world view) and
