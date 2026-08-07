@@ -41,7 +41,7 @@
         }).addTo(map);
 
         // Load the GeoJSON file and add markers
-        fetch('../outputs/ip_locations.geojson')
+        fetch('ip_locations.geojson')
             .then(response => response.json())
             .then(data => {
                 const geoLayer = L.geoJSON(data, {
