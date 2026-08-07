@@ -22,13 +22,13 @@ The map uses an OpenStreetMap basemap and loads `ip_locations.geojson` as a mark
 ## Data
 
 * GeoJSON file: [`04-ip-locations.geojson`](04-ip-locations.geojson)
-* Web map files (folder link): *to be added, GitHub Pages link*
+* Web map files (live link): [https://ishika100603.github.io/cdp-mapping-systems/geolocate-har-file/my-web-map/index.html]
+
 
 ## Reflection
 
 The most interesting finding was how little geographic variety showed up despite 217 individual network requests. This is a useful reminder that IP-based geolocation reflects server and network infrastructure, not user location. Consumer platforms like Instagram route nearly all traffic through a small number of centralized data centers, so the geography of a web session says more about a company's infrastructure choices than about any specific place.
 
-* Web map files (live link): [https://ishika100603.github.io/cdp-mapping-systems/geolocate-har-file/my-web-map/index.html]
 ## Follow-up: Comparing Against Amazon
 
 Out of curiosity about whether Instagram's single-cluster result was typical or an anomaly, I repeated the process for Amazon.com. Using the same `scrape_har_locations.py` script (pointed at a newly captured `amazon.har`), I found 119 total requests and 13 unique IP addresses, compared to Instagram's 217 requests and 6 unique IPs.
