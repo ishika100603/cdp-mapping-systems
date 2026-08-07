@@ -243,6 +243,12 @@ than a list of loose ideas.
   tools, HAR capture, geolocation, and interactive mapping, on new versions of
   this question going forward.
 
+  I also want to test this method outside a U.S. vantage point and outside U.S.-headquartered companies. Every platform here was captured from a U.S. network, and all five are American companies, so it's unclear whether "large companies own, small companies rent" reflects company size or just reflects measuring from inside the U.S. cloud and CDN ecosystem. Capturing from a different country, and pointing the pipeline at a large East Asian or European company plus a smaller regional one, would test whether the same providers dominate globally or whether region-specific ones (Alibaba Cloud, OVH, Yandex) start to appear instead.
+
+I want to test the same five platforms again through a VPN, to separate "where I'm capturing from" from "what the platform's infrastructure actually is." A VPN changes my apparent network origin without changing anything about the platforms themselves, so if Instagram and YouTube still resolve entirely to Facebook and Google regardless of which VPN server I route through, that would confirm the ownership finding is stable and not an artifact of my own network path. If instead the results shift with the VPN location, that would mean I'm measuring something closer to "which edge node is nearest me" than "who owns this platform's infrastructure," which matters a lot for how confidently I can state the conclusion.
+
+I want to expand the "rents everything" side of the sample, not just the "owns everything" side. Columbia was included as a control case specifically because it has no infrastructure of its own, but right now it's the only platform in that category. Adding several more small, infrastructure-less platforms, university sites, local news outlets, small nonprofits, would let me check whether Columbia's Cloudflare/Fastly/Google mix is typical of "small and rents everything," or just one particular combination among several a smaller organization could land on.
+
 ---
 Web map live link: (https://ishika100603.github.io/cdp-mapping-systems/geolocate-har-file/outputs/combined_ip_map.html)
 
